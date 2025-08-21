@@ -1,3 +1,5 @@
+
+\connect discord_economy_bot_db
 --
 -- PostgreSQL database dump
 --
