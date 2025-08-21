@@ -19,6 +19,9 @@ CREATE DATABASE discord_economy_bot_db
 	CONNECTION LIMIT = -1
 	IS_TEMPLATE = False;
 
+\connect discord_economy_bot_db
+\i /docker-entrypoint-initdb.d/discord_economy_bot_backup.sql
+
 CREATE ROLE discord_moderation_bot WITH
 	LOGIN
 	NOSUPERUSER
@@ -37,3 +40,6 @@ CREATE DATABASE discord_moderation_bot_db
 	LOCALE_PROVIDER = 'libc'
 	CONNECTION LIMIT = -1
 	IS_TEMPLATE = False;
+
+\connect discord_moderation_bot_db
+\i /docker-entrypoint-initdb.d/discord_moderation_bot_backup.sql

@@ -1,4 +1,4 @@
-\connect discord_moderation_bot_db
+
 
 --
 -- PostgreSQL database dump
