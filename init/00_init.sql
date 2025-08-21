@@ -1,4 +1,4 @@
-ALTER USER postgres WITH PASSWORD 'postgres';
+ALTER USER postgres WITH PASSWORD '18Yks0#nMy}siEAIF$og';
 
 CREATE ROLE discord_economy_bot WITH
 	LOGIN
