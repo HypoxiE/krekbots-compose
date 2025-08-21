@@ -20,7 +20,7 @@ CREATE DATABASE discord_economy_bot_db
 	IS_TEMPLATE = False;
 
 \connect discord_economy_bot_db
-\i /docker-entrypoint-initdb.d/discord_economy_bot_backup.sql
+\i /docker-entrypoint-backups/discord_economy_bot_backup.sql
 
 CREATE ROLE discord_moderation_bot WITH
 	LOGIN
@@ -42,4 +42,4 @@ CREATE DATABASE discord_moderation_bot_db
 	IS_TEMPLATE = False;
 
 \connect discord_moderation_bot_db
-\i /docker-entrypoint-initdb.d/discord_moderation_bot_backup.sql
+\i /docker-entrypoint-backups/discord_moderation_bot_backup.sql
