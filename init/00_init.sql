@@ -37,6 +37,3 @@ CREATE DATABASE discord_moderation_bot_db
 	LOCALE_PROVIDER = 'libc'
 	CONNECTION LIMIT = -1
 	IS_TEMPLATE = False;
-
-\connect discord_moderation_bot_db
-\i /docker-entrypoint-initdb.d/discord_moderation_bot_backup.sql
