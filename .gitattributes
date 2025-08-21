@@ -1,2 +1,2 @@
-discord_economy_bot_backup.sql -text
-discord_moderation_bot_backup -text
+init/discord_economy_bot_backup.sql -text
+init/discord_moderation_bot_backup.sql -text
