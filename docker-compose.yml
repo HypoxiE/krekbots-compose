@@ -1,8 +1,11 @@
-
 networks:
   postgres-network:
     name: postgres-network
     driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.enable_ip_masquerade: "true"
+    attachable: true
 
 services:
   postgres:
