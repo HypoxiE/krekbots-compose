@@ -1,18 +1,14 @@
 networks:
-  postgres-network:
-    name: postgres-network
+  krekbots-network:
+    name: krekbots-network
     driver: bridge
-    driver_opts:
-      com.docker.network.bridge.enable_icc: "true"
-      com.docker.network.bridge.enable_ip_masquerade: "true"
-    attachable: true
 
 services:
   postgres:
     image: postgres:17
     networks: 
-      - postgres-network
-    container_name: shared-postgres
+      - krekbots-network
+    container_name: krekbots-postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -20,7 +16,27 @@ services:
     ports:
       - "5432:5432"
     volumes:
-    #  - ./pgdata:/var/lib/postgresql/data
-      - ./backups:/docker-entrypoint-backups:ro
-      - ./init:/docker-entrypoint-initdb.d:ro
+      - ./postgres/pgdata:/var/lib/postgresql/data
+      - ./postgres/backups:/docker-entrypoint-backups:ro
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
     restart: unless-stopped
+
+
+  krekbot-economy:
+    build: ./economy-bot
+    image: krekbot-economy
+    container_name: krekbot-economy
+    restart: always
+    networks:
+      - krekbots-network
+    env_file:
+      - .env
+  krekbot-moderation:
+    build: ./moderation-bot
+    image: krekbot-moderation
+    container_name: krekbot-moderation
+    restart: always
+    networks:
+      - krekbots-network
+    env_file:
+      - .env

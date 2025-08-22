@@ -1,0 +1,8 @@
+[submodule "economy-bot"]
+	path = economy-bot
+	url = https://github.com/HypoxiE/krekbot-economy.git
+	branch = tournament/ruinship
+	
+[submodule "moderation-bot"]
+	path = moderation-bot
+	url = https://github.com/HypoxiE/krekbot-moderation.git
