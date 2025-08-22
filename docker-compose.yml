@@ -20,6 +20,11 @@ services:
       - ./postgres/backups:/docker-entrypoint-backups:ro
       - ./postgres/init:/docker-entrypoint-initdb.d:ro
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
 
 
   krekbot-economy:
@@ -32,6 +37,10 @@ services:
     env_file:
       - .env
       - ./economy-bot/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
+
   krekbot-moderation:
     build: ./moderation-bot
     image: krekbot-moderation
@@ -42,3 +51,6 @@ services:
     env_file:
       - .env
       - ./moderation-bot/.env
+    depends_on:
+      postgres:
+        condition: service_healthy
