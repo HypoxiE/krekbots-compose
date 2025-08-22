@@ -2,12 +2,13 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.9 (Ubuntu 16.9-0ubuntu0.24.04.1)
--- Dumped by pg_dump version 16.9 (Ubuntu 16.9-0ubuntu0.24.04.1)
+-- Dumped from database version 17.6 (Debian 17.6-1.pgdg13+1)
+-- Dumped by pg_dump version 17.5 (Debian 17.5-1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
+SET transaction_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SELECT pg_catalog.set_config('search_path', '', false);
@@ -613,7 +614,6 @@ COPY public.punishment_bans (id, user_id, reason, time_end, time_begin, moderato
 
 COPY public.punishment_mutes_text (id, user_id, reason, time_end, time_warn, time_begin, moderator_id) FROM stdin;
 11	1214596185038524497	неадекватность, флуд	1751316852.212452	\N	1751316853.631501	479210801891115009
-14	725375070494523392	оскорбление модерации	\N	1755852391.166809	1753173985.374117	479210801891115009
 15	692403288137531464	Гифка с политическим подтекстом	\N	1756284429.457732	1753605994.280519	479210801891115009
 1	938433872436281395	1.10	\N	1757013986.387846	1749477018.566395	\N
 16	479209452919193610	тест	\N	1757269524.037278	1754623499.7988	479210801891115009

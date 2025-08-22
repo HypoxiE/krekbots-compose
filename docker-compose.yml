@@ -31,6 +31,7 @@ services:
       - krekbots-network
     env_file:
       - .env
+      - ./economy-bot/.env
   krekbot-moderation:
     build: ./moderation-bot
     image: krekbot-moderation
@@ -40,3 +41,4 @@ services:
       - krekbots-network
     env_file:
       - .env
+      - ./moderation-bot/.env
