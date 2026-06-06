@@ -1,1 +1,7 @@
 pgdata/
+docker-compose.override.yml
+secrets.priv
+*~
+\#*\#
+.#*
+v2raya_data/

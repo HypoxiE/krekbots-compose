@@ -2,8 +2,10 @@
 -- PostgreSQL database dump
 --
 
+\restrict oDrZzS5XY4I6D1j0MWbxLBH5GFmdCNAaw59yhWs3oGwjEp1FwNKuNYCuJDysD1n
+
 -- Dumped from database version 17.6 (Debian 17.6-1.pgdg13+1)
--- Dumped by pg_dump version 17.5 (Debian 17.5-1)
+-- Dumped by pg_dump version 17.6 (Debian 17.6-0+deb13u1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -605,6 +607,8 @@ COPY public.punishment_bans (id, user_id, reason, time_end, time_begin, moderato
 10	656053768760197130	Повторное оскорбление модерации	\N	1749477018.804154	\N
 11	711891867905818715	треш контент, повторное нарушение по этой статье	\N	1749477018.81524	\N
 12	1284158571680104461	игнорирование предупреждения, флуд	\N	1749477018.826453	\N
+14	487287488277118986	Токсичность	\N	1758130610.140931	479210801891115009
+13	353419000866406401	неадекватное поведение	\N	1757944807.178887	479210801891115009
 \.
 
 
@@ -614,12 +618,6 @@ COPY public.punishment_bans (id, user_id, reason, time_end, time_begin, moderato
 
 COPY public.punishment_mutes_text (id, user_id, reason, time_end, time_warn, time_begin, moderator_id) FROM stdin;
 11	1214596185038524497	неадекватность, флуд	1751316852.212452	\N	1751316853.631501	479210801891115009
-15	692403288137531464	Гифка с политическим подтекстом	\N	1756284429.457732	1753605994.280519	479210801891115009
-1	938433872436281395	1.10	\N	1757013986.387846	1749477018.566395	\N
-16	479209452919193610	тест	\N	1757269524.037278	1754623499.7988	479210801891115009
-18	479209452919193610	тест	\N	1757438848.870735	1754846799.018741	479210801891115009
-17	579698836260257813	банворд	\N	1757442568.258068	1754836142.506109	479210801891115009
-19	761278717691166720	токсичность	\N	1758213024.499754	1755584966.322658	479210801891115009
 \.
 
 
@@ -658,6 +656,15 @@ COPY public.punishment_perms (id, user_id, reason, time_begin, moderator_id) FRO
 22	572398497895284746	Скам	1752577368.398689	479210801891115009
 23	841308739969351700	взлом акка	1754598924.184854	520882567424114689
 24	487854614679388170	Взлом	1755585138.216502	479210801891115009
+26	684007420992815202	Взлом аккаунта	1759042598.935217	479210801891115009
+27	663025952397328398	в з л о м	1759624371.367782	520882567424114689
+28	288756052227391488	В З Л О М	1760571164.897244	520882567424114689
+30	824179710036410378	взлом	1760870096.54794	479210801891115009
+31	848266632299282453	Взломан	1760966412.239201	479210801891115009
+32	423505310389501955	взломан	1760986596.842832	479210801891115009
+33	761818347888574465	скам	1763041687.710584	479210801891115009
+34	1446106854504661062	Спам, скам, взлом	1764859498.58304	479210801891115009
+35	1350112261556932658	Взлом	1767684387.644124	479210801891115009
 \.
 
 
@@ -674,8 +681,6 @@ COPY public.punishment_reprimands (id, user_id, reason, time_warn, branch_id, ti
 --
 
 COPY public.punishment_warns (id, user_id, reason, time_warn, time_begin, moderator_id) FROM stdin;
-15	725375070494523392	привет от эпилептиков сервера	1757428231.277584	1754836231.288748	479210801891115009
-16	1374720170416799754	Оффтоп + срач	1757957647.122927	1755365647.131164	598561807925248010
 \.
 
 
@@ -730,6 +735,9 @@ COPY public.staff_users (id) FROM stdin;
 598561807925248010
 477514968216895501
 515542927158804480
+1163921593026744320
+1273286786054881291
+616219835927625748
 \.
 
 
@@ -746,6 +754,9 @@ COPY public.staff_users_roles (id, user_id, role_id, branch_id, description, upd
 6	337903497401991191	490712205445169162	2	\N	1749477665.341977
 8	477514968216895501	490712205445169162	2	\N	1749477783.200237
 10	515542927158804480	1228163601026515055	3	\N	1753193960.431698
+11	1163921593026744320	490712181927837722	2	\N	1757085484.767187
+12	1273286786054881291	1228163601026515055	3	\N	1760171771.829255
+13	616219835927625748	1228163601026515055	3	\N	1760815524.290119
 \.
 
 
@@ -790,6 +801,15 @@ COPY public."аllowed_domains" (id, domain, initiator_id) FROM stdin;
 36	t.me	479210801891115009
 37	tiermaker.com	479210801891115009
 38	wplace.live	337903497401991191
+39	fxtwitter.com	520882567424114689
+40	pixiv.net	479210801891115009
+41	pikuco.ru	479210801891115009
+42	jackbox.fun	479210801891115009
+43	top-mods.ru	479210801891115009
+44	pinterest.com	479210801891115009
+45	vxtwitter.com	479210801891115009
+46	klipy.com	479210801891115009
+47	wikipedia.org	479210801891115009
 \.
 
 
@@ -797,14 +817,14 @@ COPY public."аllowed_domains" (id, domain, initiator_id) FROM stdin;
 -- Name: punishment_bans_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_bans_id_seq', 12, true);
+SELECT pg_catalog.setval('public.punishment_bans_id_seq', 14, true);
 
 
 --
 -- Name: punishment_mutes_text_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_mutes_text_id_seq', 19, true);
+SELECT pg_catalog.setval('public.punishment_mutes_text_id_seq', 24, true);
 
 
 --
@@ -818,7 +838,7 @@ SELECT pg_catalog.setval('public.punishment_mutes_voice_id_seq', 1, false);
 -- Name: punishment_perms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_perms_id_seq', 24, true);
+SELECT pg_catalog.setval('public.punishment_perms_id_seq', 35, true);
 
 
 --
@@ -832,7 +852,7 @@ SELECT pg_catalog.setval('public.punishment_reprimands_id_seq', 1, false);
 -- Name: punishment_warns_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_warns_id_seq', 16, true);
+SELECT pg_catalog.setval('public.punishment_warns_id_seq', 23, true);
 
 
 --
@@ -874,14 +894,14 @@ SELECT pg_catalog.setval('public.staff_users_id_seq', 1, false);
 -- Name: staff_users_roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.staff_users_roles_id_seq', 10, true);
+SELECT pg_catalog.setval('public.staff_users_roles_id_seq', 13, true);
 
 
 --
 -- Name: аllowed_domains_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public."аllowed_domains_id_seq"', 38, true);
+SELECT pg_catalog.setval('public."аllowed_domains_id_seq"', 47, true);
 
 
 --
@@ -1281,4 +1301,6 @@ ALTER TABLE ONLY public.staff_users_roles
 --
 -- PostgreSQL database dump complete
 --
+
+\unrestrict oDrZzS5XY4I6D1j0MWbxLBH5GFmdCNAaw59yhWs3oGwjEp1FwNKuNYCuJDysD1n
 
