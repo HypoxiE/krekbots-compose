@@ -55,18 +55,30 @@ services:
       postgres:
         condition: service_healthy
 
-  v2raya:
-     image: mzz2017/v2raya:v2.2.7.5
-     container_name: v2raya
-     restart: always
-     networks:
-       - krekbots-network
-     ports:
-       - "2017:2017"
-     environment:
-       - V2RAYA_ADDRESS=0.0.0.0:2017
-     volumes:
-       - ./v2raya_data:/etc/v2raya
+  # v2raya:
+  #    image: mzz2017/v2raya:v2.2.7.5
+  #    container_name: v2raya
+  #    restart: always
+  #    networks:
+  #      - krekbots-network
+  #    ports:
+  #      - "2017:2017"
+  #    environment:
+  #      - V2RAYA_ADDRESS=0.0.0.0:2017
+  #    volumes:
+  #      - ./v2raya_data:/etc/v2raya
+
+  s-ui:
+    image: ghcr.io/alireza0/s-ui:latest
+    container_name: krekbots_s-ui
+    restart: always
+    networks:
+      - krekbots-network
+    ports:
+      - "8000:2095"
+    volumes:
+      - ./s-ui_data:/app/db
+
 
   curl:
     image: curlimages/curl:8.20.0
@@ -74,11 +86,11 @@ services:
     networks:
       - krekbots-network
     environment:
-      - http_proxy=http://v2raya:20171
-      - https_proxy=http://v2raya:20171
+      - http_proxy=http://krekbots_s-ui:20170
+      - https_proxy=http://krekbots_s-ui:20170
       - no_proxy=postgres,db,redis,localhost,127.0.0.1,.local
-      - SOCKS5_PROXY=socks5://v2raya:20170
-      - HTTP_PROXY=http://v2raya:20171
-      - HTTPS_PROXY=http://v2raya:20171
+      - SOCKS5_PROXY=socks5://krekbots_s-ui:20170
+      - HTTP_PROXY=http://krekbots_s-ui:20170
+      - HTTPS_PROXY=http://krekbots_s-ui:20170
       - NO_PROXY=postgres,db,redis,localhost,127.0.0.1,.local
     command: ["sleep", "infinity"]
