@@ -2,10 +2,10 @@
 -- PostgreSQL database dump
 --
 
-\restrict oDrZzS5XY4I6D1j0MWbxLBH5GFmdCNAaw59yhWs3oGwjEp1FwNKuNYCuJDysD1n
+\restrict mZdyJc82ylRUbMKLRCTI7AjpRC8AxNl2kn90zlvnwvRyKFUlJCC4mcAflDDi9Iw
 
--- Dumped from database version 17.6 (Debian 17.6-1.pgdg13+1)
--- Dumped by pg_dump version 17.6 (Debian 17.6-0+deb13u1)
+-- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
+-- Dumped by pg_dump version 17.10 (Debian 17.10-0+deb13u1)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -597,18 +597,6 @@ ALTER TABLE ONLY public."аllowed_domains" ALTER COLUMN id SET DEFAULT nextval('
 --
 
 COPY public.punishment_bans (id, user_id, reason, time_end, time_begin, moderator_id) FROM stdin;
-1	580283856989716480	оск, неадекватное поведение, банворды, игнор предупреждения	\N	1749477018.675446	\N
-2	1138571057129869402	Скам	\N	1749477018.696941	\N
-3	818122097501929482	Несоответствие возрастным ограничениям дискорда (•_•)	\N	1749477018.710176	\N
-4	710173705833283625	оффтоп + нарушение лицензионного соглашения дискорда + нарушение законодательства РФ	\N	1749477018.723029	\N
-5	836952020858568744	18+ шок контент.	\N	1749477018.737734	\N
-6	832107767182786560	реклама	\N	1749477018.752076	\N
-7	1262121823471014133	нацистская символика	\N	1749477018.764442	\N
-10	656053768760197130	Повторное оскорбление модерации	\N	1749477018.804154	\N
-11	711891867905818715	треш контент, повторное нарушение по этой статье	\N	1749477018.81524	\N
-12	1284158571680104461	игнорирование предупреждения, флуд	\N	1749477018.826453	\N
-14	487287488277118986	Токсичность	\N	1758130610.140931	479210801891115009
-13	353419000866406401	неадекватное поведение	\N	1757944807.178887	479210801891115009
 \.
 
 
@@ -617,7 +605,7 @@ COPY public.punishment_bans (id, user_id, reason, time_end, time_begin, moderato
 --
 
 COPY public.punishment_mutes_text (id, user_id, reason, time_end, time_warn, time_begin, moderator_id) FROM stdin;
-11	1214596185038524497	неадекватность, флуд	1751316852.212452	\N	1751316853.631501	479210801891115009
+1	580665095244349450	Масс оск	1781973916.491672	\N	1781369118.447296	598561807925248010
 \.
 
 
@@ -634,37 +622,6 @@ COPY public.punishment_mutes_voice (id, user_id, reason, time_end, time_warn, ti
 --
 
 COPY public.punishment_perms (id, user_id, reason, time_begin, moderator_id) FROM stdin;
-1	786123087522693120	Символика, запрещённая правилами дискорда	1749477018.838439	\N
-2	919132257053212733	Банворды, нац. символика	1749477018.85559	\N
-3	589033880552734730	реклама хуйни	1749477018.866694	\N
-4	295626159775940608	Неприличная аватарка. Очень неприличная.	1749477018.879227	\N
-5	580283856989716480	Оскорбления	1749477018.890433	\N
-6	443394204186443786	скам	1749477018.903366	\N
-7	1138571057129869402	Скам	1749477018.914729	\N
-8	887392259006427147	Скам	1749477018.926383	\N
-9	1223665783910043672	Неадекватное поведение, поведение как у ребёнка младше 13 лет. Может быть разбанен по мнению других	1749477018.937912	\N
-10	548927309332217874	Сиськи-письки	1749477018.949006	\N
-11	1173221909081632808	Похититель аккаунтов стима	1749477018.960064	\N
-12	875335896801624104	скам	1749477018.972074	\N
-13	1199158855196741740	скам	1749477018.984143	\N
-14	1168311574231007306	очевидно < 13 лет + политические высказывание в рисовых полях	1749477018.997345	\N
-15	1168316536944083084	политспам	1749477019.010285	\N
-16	459426166156165141	Скам Детей	1749477019.021373	\N
-17	1130922971242959021	взломан. может быть разбанен по требованию	1749477019.034486	\N
-18	1361218326872719423	Скам пользователей в лс	1749477019.046274	\N
-19	711891867905818715	Набрал больше 18 'очков наказаний'	1749477019.057119	\N
-22	572398497895284746	Скам	1752577368.398689	479210801891115009
-23	841308739969351700	взлом акка	1754598924.184854	520882567424114689
-24	487854614679388170	Взлом	1755585138.216502	479210801891115009
-26	684007420992815202	Взлом аккаунта	1759042598.935217	479210801891115009
-27	663025952397328398	в з л о м	1759624371.367782	520882567424114689
-28	288756052227391488	В З Л О М	1760571164.897244	520882567424114689
-30	824179710036410378	взлом	1760870096.54794	479210801891115009
-31	848266632299282453	Взломан	1760966412.239201	479210801891115009
-32	423505310389501955	взломан	1760986596.842832	479210801891115009
-33	761818347888574465	скам	1763041687.710584	479210801891115009
-34	1446106854504661062	Спам, скам, взлом	1764859498.58304	479210801891115009
-35	1350112261556932658	Взлом	1767684387.644124	479210801891115009
 \.
 
 
@@ -681,6 +638,7 @@ COPY public.punishment_reprimands (id, user_id, reason, time_warn, branch_id, ti
 --
 
 COPY public.punishment_warns (id, user_id, reason, time_warn, time_begin, moderator_id) FROM stdin;
+1	1105217070918017044	Полит картинка	1783695083.7296	1781103083.740589	598561807925248010
 \.
 
 
@@ -697,9 +655,8 @@ COPY public.scheduled_messages (source_message_id, source_channel_id, webhook_id
 --
 
 COPY public.staff_branches (id, layer, purpose, is_admin, is_moder) FROM stdin;
-1	10	администрация	t	f
-2	20	модерация	f	t
-3	50	ритуализация	f	f
+1	2	администрация	t	f
+2	5	модерация	f	t
 \.
 
 
@@ -716,11 +673,9 @@ COPY public.staff_curation (id, apprentice_id, curator_id, branch_id) FROM stdin
 --
 
 COPY public.staff_roles (id, layer, staff_salary, branch_id) FROM stdin;
-490714020068720640	10	20	1
-887696340920963072	20	15	1
-490712205445169162	10	10	2
-490712181927837722	20	5	2
-1228163601026515055	20	0	3
+887696340920963072	4	10	1
+490712205445169162	5	10	2
+490712181927837722	10	10	2
 \.
 
 
@@ -730,14 +685,11 @@ COPY public.staff_roles (id, layer, staff_salary, branch_id) FROM stdin;
 
 COPY public.staff_users (id) FROM stdin;
 479210801891115009
-337903497401991191
-520882567424114689
-598561807925248010
-477514968216895501
-515542927158804480
 1163921593026744320
-1273286786054881291
-616219835927625748
+477514968216895501
+598561807925248010
+520882567424114689
+337903497401991191
 \.
 
 
@@ -746,17 +698,13 @@ COPY public.staff_users (id) FROM stdin;
 --
 
 COPY public.staff_users_roles (id, user_id, role_id, branch_id, description, update_time) FROM stdin;
-1	479210801891115009	887696340920963072	1	\N	1749477487.521233
-2	337903497401991191	490714020068720640	1	\N	1749477503.074246
-3	520882567424114689	490712205445169162	2	\N	1749477567.829773
-4	598561807925248010	490712205445169162	2	\N	1749477609.239005
-5	479210801891115009	490712205445169162	2	\N	1749477646.519769
-6	337903497401991191	490712205445169162	2	\N	1749477665.341977
-8	477514968216895501	490712205445169162	2	\N	1749477783.200237
-10	515542927158804480	1228163601026515055	3	\N	1753193960.431698
-11	1163921593026744320	490712181927837722	2	\N	1757085484.767187
-12	1273286786054881291	1228163601026515055	3	\N	1760171771.829255
-13	616219835927625748	1228163601026515055	3	\N	1760815524.290119
+1	479210801891115009	887696340920963072	1	\N	1780815432.267434
+2	1163921593026744320	490712181927837722	2	\N	1780815922.348591
+3	477514968216895501	490712205445169162	2	\N	1780815971.973426
+4	598561807925248010	490712205445169162	2	\N	1780816016.639775
+5	520882567424114689	490712205445169162	2	\N	1780816048.099903
+7	337903497401991191	490712205445169162	2	\N	1780816086.164406
+8	479210801891115009	490712205445169162	2	\N	1780816109.883106
 \.
 
 
@@ -765,51 +713,6 @@ COPY public.staff_users_roles (id, user_id, role_id, branch_id, description, upd
 --
 
 COPY public."аllowed_domains" (id, domain, initiator_id) FROM stdin;
-1	youtube.com	479210801891115009
-2	youtu.be	479210801891115009
-3	tenor.com	479210801891115009
-4	twitch.tv	479210801891115009
-5	discord.gg	479210801891115009
-6	discord.com	479210801891115009
-7	discordapp.com	479210801891115009
-8	discord.media	479210801891115009
-9	discordapp.net	479210801891115009
-10	discordcdn.com	479210801891115009
-11	discord.dev	479210801891115009
-12	discord.new	479210801891115009
-13	discord.gift	479210801891115009
-14	discordstatus.com	479210801891115009
-15	dis.gd	479210801891115009
-16	discord.co	479210801891115009
-17	github.com	479210801891115009
-18	steampowered.com	479210801891115009
-19	imgur.com	479210801891115009
-20	steamcommunity.com	479210801891115009
-21	steamstatic.com	479210801891115009
-22	ggntw.com	479210801891115009
-23	shikimori.one	479210801891115009
-26	google.com	479210801891115009
-27	goo.su	479210801891115009
-28	rimworldwiki.com	479210801891115009
-29	giphy.com	479210801891115009
-30	shapes.inc	479210801891115009
-31	forms.gle	479210801891115009
-32	factorio.com	479210801891115009
-33	steamusercontent.com	479210801891115009
-34	ozon.ru	479210801891115009
-35	boosty.to	479210801891115009
-36	t.me	479210801891115009
-37	tiermaker.com	479210801891115009
-38	wplace.live	337903497401991191
-39	fxtwitter.com	520882567424114689
-40	pixiv.net	479210801891115009
-41	pikuco.ru	479210801891115009
-42	jackbox.fun	479210801891115009
-43	top-mods.ru	479210801891115009
-44	pinterest.com	479210801891115009
-45	vxtwitter.com	479210801891115009
-46	klipy.com	479210801891115009
-47	wikipedia.org	479210801891115009
 \.
 
 
@@ -817,14 +720,14 @@ COPY public."аllowed_domains" (id, domain, initiator_id) FROM stdin;
 -- Name: punishment_bans_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_bans_id_seq', 14, true);
+SELECT pg_catalog.setval('public.punishment_bans_id_seq', 1, false);
 
 
 --
 -- Name: punishment_mutes_text_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_mutes_text_id_seq', 24, true);
+SELECT pg_catalog.setval('public.punishment_mutes_text_id_seq', 1, true);
 
 
 --
@@ -838,7 +741,7 @@ SELECT pg_catalog.setval('public.punishment_mutes_voice_id_seq', 1, false);
 -- Name: punishment_perms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_perms_id_seq', 35, true);
+SELECT pg_catalog.setval('public.punishment_perms_id_seq', 1, false);
 
 
 --
@@ -852,7 +755,7 @@ SELECT pg_catalog.setval('public.punishment_reprimands_id_seq', 1, false);
 -- Name: punishment_warns_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.punishment_warns_id_seq', 23, true);
+SELECT pg_catalog.setval('public.punishment_warns_id_seq', 1, true);
 
 
 --
@@ -866,7 +769,7 @@ SELECT pg_catalog.setval('public.scheduled_messages_source_message_id_seq', 1, f
 -- Name: staff_branches_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.staff_branches_id_seq', 3, true);
+SELECT pg_catalog.setval('public.staff_branches_id_seq', 2, true);
 
 
 --
@@ -894,14 +797,14 @@ SELECT pg_catalog.setval('public.staff_users_id_seq', 1, false);
 -- Name: staff_users_roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public.staff_users_roles_id_seq', 13, true);
+SELECT pg_catalog.setval('public.staff_users_roles_id_seq', 8, true);
 
 
 --
 -- Name: аllowed_domains_id_seq; Type: SEQUENCE SET; Schema: public; Owner: discord_moderation_bot
 --
 
-SELECT pg_catalog.setval('public."аllowed_domains_id_seq"', 47, true);
+SELECT pg_catalog.setval('public."аllowed_domains_id_seq"', 1, false);
 
 
 --
@@ -1302,5 +1205,5 @@ ALTER TABLE ONLY public.staff_users_roles
 -- PostgreSQL database dump complete
 --
 
-\unrestrict oDrZzS5XY4I6D1j0MWbxLBH5GFmdCNAaw59yhWs3oGwjEp1FwNKuNYCuJDysD1n
+\unrestrict mZdyJc82ylRUbMKLRCTI7AjpRC8AxNl2kn90zlvnwvRyKFUlJCC4mcAflDDi9Iw
 
